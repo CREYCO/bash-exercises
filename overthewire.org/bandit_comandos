@@ -1,0 +1,106 @@
+# ********************************************************
+ls -la  # muestar files ocultos
+Bandit 4 *************************************************
+# distintas maneras de mostrar lo q encuentra FIND
+find .  # directorios y files
+find . -type f -print 
+find . -type file -printf "%f\t%p\t%u\t%g\t%g\t%m\n"
+find . -type f -printf "%f\t%p\t%u\t%g\t%g\t%m\n" | column -t
+#probar
+| column -t
+| xargs cat
+| xargs grep "leaving"
+| xargs file  # this command return file type
+cat $(find . -name -file07)
+
+Permisos
+_rwx 111 2^2+2^1+2^0=7
+_rw- 110 2^2+2^1+0^0=4+2=6
+_r-- 100 2^2 = 4
+_-w- 010 0+2^1+0 = 2
+_--- 000 0
+Chmod
+g-w,o-rw   642 rw-r---w-
+o-rw       640 rw-r-----
+g-r,o-w  600 rw-------
+
+Permisos Especiales
+chattr +i -V file.txt, pone
+lsattr
+Chattr -i -V file.txt, saca
+No permite tocar el file
+
+bandit 4-->5
+find . -name -file* | xargs file # vemos cual es legible
+time find . -name -file* | xargs file  # cuanto tarde el proceso
+
+Bandit 5 *********************
+find .
+find . type file = find . -type f
+find . -type f -readable 
+find . -type f -writable
+find . -type f -readable ! -executable # leible no ejecutable
+find . -type f -readable ! -executable -size 1033c # c = bytes
+find . -type f -readable ! -executable -size 1033c |xargs cat  # token -> bandit 6
+find . -type f -readable ! -executable -size 1033c |xargs cat|xargs 
+# mas limpio el anterior tiene saltos de linea y espacios en blanco
+
+# ahora usemos expresiones regulares para eliminar esos espacio con el comando sed
+cat etc/passwd |head -n 1 o el nro de lineas q necesite desde la 1ra
+cat etc/passwd |tail -n 1 o el nro de lineas q necesite desde la Ultima
+cat etc/passwd |awk 'NR==2' # la linea 2
+#usando sed para sustituir caracteres
+cat etc/passwd |head -n 1| sed "s/root/noroot/g" # cambia root x noroot el toda la linea
+#-------------------------------------------------------------------------
+find . -type f -readable ! -executable -size 1033c |xargs cat|sed 's/^ *//'
+# o tambien
+find . -type f -readable ! -executable -size 1033c |xargs cat|sed '/^\s*$/d'
+
+# Bandit 7
+find / -user bandit7 -group bandit6 -size 33c  
+# nos da muchos errores de Permission denied, ya q no tenemos privilegios a esos directorios
+find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
+# al redireccionar el standart erro a /dev/null, nos queda solo lo q podemos ver
+find / -user bandit7 -group bandit6 -size 33c 2>/dev/null | xargs cat # nos retorna la contraseña
+# parar acceder a bandit7--> HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+#
+# el comando disow, permite q un proceso en 2do plano , se independice de la consola
+#
+#
+cat data.txt | grep millionth
+grep millionth data.txt
+awk "/millionth/" data.txt
+awk "/millionth/" data.txt | awk '{print $2}'     # --> cvX2JJa4CFALtqS87jk27qwqGhBM9plV 
+# millionth	cvX2JJa4CFALtqS87jk27qwqGhBM9plV  # todos retornan lo mismo, grep es +rapido
+## Jugando
+awk "/millionth/" data.txt | rev # invierte lo q encuentre
+# Vlp9MBhGqwq72kj78SqtLAFC4aJJ2Xvc	htnoillim
+awk "/millionth/" data.txt | rev | awk 'NF{print $NF}' # imprime lo ultimo invertido 
+# htnoillim
+
+#https://www.youtube.com/watch?v=RUorAzaDftg&t=4806s
+#BANDIT8 --- 58:16
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+

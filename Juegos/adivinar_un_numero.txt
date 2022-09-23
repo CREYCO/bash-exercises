@@ -1,0 +1,77 @@
+# piense un número de tres dígitos
+# ordenado de mayor a menor, y que ninguno se repita
+# luego que reste el mismo numero pero al revez
+
+ejm: 
+
+643 y los vueta 346 
+restar 643 - 346 = 297
+
+dime el utimo nro de la resta --> 7
+el del medio sera = 9 
+el 1er numero es la diferencia 9-7 = 2
+
+otro
+987 - 789 = 198
+
+el ultimo nº = 8
+el del medio = 9
+el 1er.   Nº 
+9 - 8 = 1
+==> 198 es la diferencia
+
+
+OTRO METODO
+1. Súmale 7.
+2. Multiplica el resultado por 2.
+3. Réstale 6 al resultado.
+4. Divide el resultado entre 2.
+5. Réstale el número que pensaste.
+    
+PENSAS 51
+1. 58
+2. 116
+3. 110
+4. 55
+5. 4    
+
+otro metodo
+1) Súmale 5
+2) Resta 3 del resultado
+3) Suma ahora 4
+4) Réstale el número que pensaste
+
+51
+56
+53
+57
+6  < --- estas pendando en ..
+
+otro truco
+De nuevo, piensa un número del 1 al 10
+
+1) Tienes que sumar 5 y restar 2
+2) Ahora súmale 4 y réstale 7 (si te hace falta calculadora ya sabes)
+3) Multiplica ese resultado por 9 
+
+pienso en 7
+1) 10
+2) 7
+3) 63
+4) 6+3=9
+
+A.1 B.2 C.3 D.4 E.5 F.6 G.7 H.8 I.9 J.10
+
+
+
+
+
+
+
+
+
+
+
+
+
+

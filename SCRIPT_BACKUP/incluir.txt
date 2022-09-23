@@ -1,0 +1,5 @@
+#!/bin/bash
+rsync /home/tungasuca/Descargas/    /media/home
+#rsync /home/tungasuca/Documentos/
+#rsync /home/tungasuca/Imágenes/
+#rsync /home/tungasuca/Música/
